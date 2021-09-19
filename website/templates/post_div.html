@@ -15,7 +15,7 @@
       <!-- Delete button in the header-->
       <div>
         <!-- Like button -->
-        {{post.likes|length}}
+        <span id="likes-count-{{post.id}}">{{ post.likes|length }}</span>
         <!-- {% set liked = [] %}
         {% for like in post.likes %}
           {% if like.author == user.id %}
@@ -33,7 +33,7 @@
         </a>
         {% endif %} -->
 
-        {% if user.id in post.likes|map(attribute="author")|list %}
+        <!-- {% if user.id in post.likes|map(attribute="author")|list %}
         <a href="/like-post/{{post.id}}" type="button">
           <i class="fas fa-thumbs-up"></i>
         </a>
@@ -41,9 +41,21 @@
         <a href="/like-post/{{post.id}}" type="button">
           <i class="far fa-thumbs-up"></i>
         </a>
-        {% endif %}
-        
-        {% if user.id == post.author %}
+        {% endif %} -->
+
+        {% if user.id in post.likes|map(attribute="author")|list %}
+        <i
+          class="fas fa-thumbs-up"
+          id="like-button-{{post.id}}"
+          onclick="like({{post.id}})"
+        ></i>
+        {% else %}
+        <i
+          class="far fa-thumbs-up"
+          id="like-button-{{post.id}}"
+          onclick="like({{post.id}})"
+        ></i>
+        {% endif %} {% if user.id == post.author %}
         <div class="btn-group">
           <button
             type="button"
