@@ -1,7 +1,21 @@
-{% extends "base.html" %}
+{% extends "post_div.html" %}
 <!-- Variables: name-->
 
-{% block title %} Home {% endblock %}
-{% block content %}
-<h1>Hello test</h1>
-{% endblock %}
+{% block title %} {{username}}'s Posts {% endblock %} {% block header %}
+{{username}}'s Posts {% endblock %} {% block footer%}
+<a href="/home">
+  <button type="button" class="btn btn-lg btn-secondary">Back</button>
+</a>
+{%endblock%}
+
+<!-- <center>
+  <h1>{{username}}'s Posts</h1>
+</center>
+<br />
+{{username}}
+<br />
+{{posts}}
+<br />
+<a href="/home">
+  <button type="button" class="btn btn-lg btn-secondary">Back</button>
+</a> -->

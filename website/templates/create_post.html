@@ -1,7 +1,26 @@
 {% extends "base.html" %}
 <!-- Variables: name-->
 
-{% block title %} Home {% endblock %}
-{% block content %}
-<h1>Hello test</h1>
+{% block title %} Home {% endblock %} {% block content %}
+<h1 align="center">Make a Post</h1>
+
+<form action="" method="POST">
+  <textarea
+    name="text"
+    id="text"
+    class="form-control"
+    cols="30"
+    rows="10"
+  ></textarea>
+  <br />
+  <div align="center">
+    <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+  </div>
+</form>
+<br />
+<div align="center">
+  <a href="/home">
+    <button type="button" class="btn btn-lg btn-secondary">Back</button>
+  </a>
+</div>
 {% endblock %}
